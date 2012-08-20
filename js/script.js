@@ -38,8 +38,8 @@ $(function(){
       if (status == window.google.maps.GeocoderStatus.OK) {
           var resultLocation = results[0];
           var address = resultLocation.formatted_address;
-          var lat = resultLocation.geometry.location.$a;
-          var lon = resultLocation.geometry.location.ab;
+          var lat = resultLocation.geometry.location.Xa;
+          var lon = resultLocation.geometry.location.Ya;
 
           var dupes = Locations.find(function(l) {
             return (l.get("lat") == lat && l.get("lon") == lon);
@@ -152,7 +152,6 @@ $(function(){
       var l = new Location();
       l.set({ "text": this.input.val() });
       Locations.add(l);
-
       l.geocode();
 
       //Clear the input box.
